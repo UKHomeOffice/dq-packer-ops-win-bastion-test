@@ -97,10 +97,10 @@
         path: C:\tmp\install\AWSCLI64.msi
         state: present
 
-    - name:  GET config files from S3
-      win_shell: aws s3 cp s3://dq-config-bucket/dq-ops-win/ C:\tmp\install\ --recursive
-      args:
-        executable: powershell.exe
+    #- name:  GET config files from S3
+    #  win_shell: aws s3 cp s3://dq-config-bucket/dq-ops-win/ C:\tmp\install\ --recursive
+    #  args:
+    #    executable: powershell.exe
 
     - name: Install AWS Toolkit for Powershell
       win_package:
