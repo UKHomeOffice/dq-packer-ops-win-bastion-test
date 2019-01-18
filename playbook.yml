@@ -149,15 +149,15 @@
       win_shell: |
         C:\tmp\install\SSMS-Setup-ENU.exe /install /quiet /norestart
 
-    - name: Unzip Cloudwatch config file
-      win_unzip:
-        src: C:\tmp\install\AWS.EC2.Windows.Cloudwatch.json.zip
-        dest: C:\Program Files\Amazon\SSM\Plugins\awsCloudWatch
-        delete_archive: yes
+    #- name: Unzip Cloudwatch config file
+    #  win_unzip:
+    #    src: C:\tmp\install\AWS.EC2.Windows.Cloudwatch.json.zip
+    #    dest: C:\Program Files\Amazon\SSM\Plugins\awsCloudWatch
+    #    delete_archive: yes
 
-    - name: Save CW config by restarting the Service
-      win_shell: |
-        Restart-Service AmazonSSMAgent
+    #- name: Save CW config by restarting the Service
+    #  win_shell: |
+    #    Restart-Service AmazonSSMAgent
 
     - name: Copy stopped service monitoring PS script
       win_copy:
